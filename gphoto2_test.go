@@ -1,12 +1,14 @@
-package gp
+package gphoto2_test
 
 import (
 	"testing"
+
+	. "github.com/weebney/go-gphoto2"
 )
 
-func TestGphoto2t (t *testing.T) {
+func TestPhoto(t *testing.T) {
 	context := NewContext()
-	
+
 	camera, err := NewCamera()
 	if err != nil {
 		t.Fatal(err)

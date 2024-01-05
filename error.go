@@ -1,4 +1,4 @@
-package gp
+package gphoto2
 
 // #cgo linux pkg-config: libgphoto2
 // #include <gphoto2/gphoto2.h>

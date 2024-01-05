@@ -1,4 +1,4 @@
-package gp
+package gphoto2
 
 // #cgo linux pkg-config: libgphoto2
 // #include <gphoto2/gphoto2.h>
@@ -7,11 +7,11 @@ import "C"
 import "unsafe"
 
 const (
-	FILE_TYPE_PREVIEW = C.GP_FILE_TYPE_PREVIEW
-	FILE_TYPE_NORMAL = C.GP_FILE_TYPE_NORMAL
-	FILE_TYPE_RAW = C.GP_FILE_TYPE_RAW
-	FILE_TYPE_AUDIO = C.GP_FILE_TYPE_AUDIO
-	FILE_TYPE_EXIF = C.GP_FILE_TYPE_EXIF
+	FILE_TYPE_PREVIEW  = C.GP_FILE_TYPE_PREVIEW
+	FILE_TYPE_NORMAL   = C.GP_FILE_TYPE_NORMAL
+	FILE_TYPE_RAW      = C.GP_FILE_TYPE_RAW
+	FILE_TYPE_AUDIO    = C.GP_FILE_TYPE_AUDIO
+	FILE_TYPE_EXIF     = C.GP_FILE_TYPE_EXIF
 	FILE_TYPE_METADATA = C.GP_FILE_TYPE_METADATA
 )
 
@@ -19,7 +19,7 @@ type CameraFile C.CameraFile
 type CameraFileType int
 
 type CameraFilePath struct {
-	Name string
+	Name   string
 	Folder string
 }
 

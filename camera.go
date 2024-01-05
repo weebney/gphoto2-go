@@ -1,4 +1,4 @@
-package gp
+package gphoto2
 
 // #cgo linux pkg-config: libgphoto2
 // #include <gphoto2/gphoto2.h>
@@ -39,7 +39,7 @@ func (camera *Camera) Capture(captureType CameraCaptureType, ctx *Context) (Came
 
 	_captureType := C.CameraCaptureType(captureType)
 	if ret := C.gp_camera_capture(camera.c(), _captureType, &_path, ctx.c()); ret != 0 {
-		return CameraFilePath{"",""} , e(ret)
+		return CameraFilePath{"", ""}, e(ret)
 	}
 
 	path.Name = C.GoString(&_path.name[0])
@@ -56,7 +56,7 @@ func (camera *Camera) File(folder, name string, filetype CameraFileType, context
 	_name := C.CString(name)
 	_context := (*C.GPContext)(unsafe.Pointer(context))
 	_filetype := (C.CameraFileType)(filetype)
-	if ret := C.gp_camera_file_get(_camera, _folder, _name, _filetype, _file, _context); ret != 0 { 
+	if ret := C.gp_camera_file_get(_camera, _folder, _name, _filetype, _file, _context); ret != 0 {
 		return nil, e(ret)
 	}
 	return (*CameraFile)(unsafe.Pointer(_file)), nil
