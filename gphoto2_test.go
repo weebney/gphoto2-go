@@ -3,11 +3,12 @@ package gphoto2_test
 import (
 	"testing"
 
-	. "github.com/weebney/go-gphoto2"
+	. "github.com/weebney/gphoto2-go"
 )
 
 func TestPhoto(t *testing.T) {
 	context := NewContext()
+	defer context.Free()
 
 	camera, err := NewCamera()
 	if err != nil {
@@ -38,6 +39,4 @@ func TestPhoto(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-
-	context.Free()
 }

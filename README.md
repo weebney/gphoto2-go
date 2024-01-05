@@ -1,9 +1,15 @@
-# go-gphoto2
+# gphoto2-go
 
 Go bindings for [libgphoto2](https://github.com/gphoto/libgphoto2), allowing you to control cameras directly from Go programs.
 
 > [!IMPORTANT]
-> This package is extremely unstable and nowhere near complete. Use it at your own risk!
+> While it does work (kind of), this package is extremely unstable and nowhere near complete. Use it at your own risk!
+
+## installation
+
+```console
+$ go get github.com/weebney/gphoto2-go
+```
 
 ## todo:
 ```
